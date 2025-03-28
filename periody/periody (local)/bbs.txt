@@ -1,0 +1,10 @@
+<div id="1730209603" ip="127.0.0.1"><hr>
+<p>Poster: ipuupii (No email address)</p>
+<p>Content:</p>
+<p>@ho@poh@:io:@</p>
+<form method="POST" action="periody.py"><input type="hidden" name="post_id" value="1730209603"><input type="submit" name="action" value="Delete"><input type="submit" name="action" value="Report"></form></div>
+<div id="1730209627" ip="127.0.0.1"><hr>
+<p>Poster: uihui <a href="mailto:hhgg@uytfiufui">hhgg@uytfiufui</a></p>
+<p>Content:</p>
+<p>yhgolugyolgyolp</p>
+<form method="POST" action="periody.py"><input type="hidden" name="post_id" value="1730209627"><input type="submit" name="action" value="Delete"><input type="submit" name="action" value="Report"></form></div>

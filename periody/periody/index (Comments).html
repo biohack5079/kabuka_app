@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 文書の型を宣言 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ページのタイトル -->
+    <title>ＮＩＳＡ積立掲示板「ＰＥＲＩＯＤＹ」</title>
+    <!-- 文字エンコーディングをUTF-8に設定 -->
+    <meta charset="utf-8">
+    <!-- ページの説明 -->
+    <meta name="description" content="">
+    <!-- ページの作者 -->
+    <meta name="author" content="">
+    <!-- ビューポートの設定（レスポンシブデザイン対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 外部スタイルシートのリンク（現在は空） -->
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- ページの見出し -->
+    <p>ＮＩＳＡ積立掲示板「ＰＥＲＩＯＤＹ」</p>
+    <!-- フォームの開始タグ。POSTメソッドでデータを送信し、アクションURLに指定されたスクリプトにデータを送る -->
+    <form method="POST" action="/periody/cgi-bin/periody.py">
+        <!-- 名前入力フィールド -->
+        <input type="text" name="personal_name" placeholder="名前"><br><br>
+        <!-- メールアドレス入力フィールド -->
+        <input type="email" name="email" placeholder="メールアドレス（任意）"><br><br>
+        <!-- 内容入力フィールド（テキストエリア） -->
+        <textarea name="contents" rows="8" cols="40" placeholder="内容"></textarea><br><br>
+        <!-- 送信ボタン -->
+        <input type="submit" name="action" value="投稿する">
+    </form>
+</body>
+</html>
+

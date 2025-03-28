@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #3498db;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+            margin-bottom: 20px; /* 広告との間にスペースを作る */
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        input[type="submit"]:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .ad-container {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var value1 = document.forms["nandForm"]["value1"].value;
+            var value2 = document.forms["nandForm"]["value2"].value;
+            var submitButton = document.forms["nandForm"]["submit"];
+            if (value1 === "" || value2 === "") {
+                submitButton.disabled = true;
+            } else {
+                submitButton.disabled = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>論理演算を表示します</h1>
+        <form name="nandForm" action="./cgi-bin/nand.py" method="POST" oninput="validateForm()">
+            値１を１か０で入力してください<br>
+            <input type="text" name="value1"><br>
+            値２を１か０で入力してください<br>
+            <input type="text" name="value2"><br>
+            <input type="submit" name="submit" value="送信" disabled>
+        </form>
+    </div>
+    <div class="ad-container">
+        <!-- 広告スペース -->
+    </div>
+</body>
+</html>
+
+

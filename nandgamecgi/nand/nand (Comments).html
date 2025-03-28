@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 文字エンコーディングをUTF-8に設定 -->
+    <meta charset="utf-8">
+    <!-- ビューポートの設定（レスポンシブデザイン対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* body要素のスタイル設定 */
+        body {
+            background-color: #ecf0f1; /* 背景色を設定 */
+            color: #2c3e50; /* 文字色を設定 */
+            font-family: Arial, sans-serif; /* フォントを設定 */
+            margin: 0; /* マージンを0に設定 */
+            padding: 0; /* パディングを0に設定 */
+            display: flex; /* フレックスボックスを使用 */
+            flex-direction: column; /* フレックス方向を縦に設定 */
+            justify-content: center; /* 垂直方向に中央揃え */
+            align-items: center; /* 水平方向に中央揃え */
+            height: 100vh; /* 高さを100%に設定 */
+            text-align: center; /* テキストを中央揃え */
+            box-sizing: border-box; /* ボックスサイズをborder-boxに設定 */
+        }
+        /* h1要素のスタイル設定 */
+        h1 {
+            color: #3498db; /* 見出しの文字色を設定 */
+        }
+        /* .containerクラスのスタイル設定 */
+        .container {
+            background-color: #ffffff; /* コンテナの背景色を設定 */
+            padding: 20px; /* パディングを設定 */
+            border-radius: 10px; /* 角を丸くする */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを設定 */
+            width: 90%; /* 幅を90%に設定 */
+            max-width: 400px; /* 最大幅を400pxに設定 */
+            box-sizing: border-box; /* ボックスサイズをborder-boxに設定 */
+            margin-bottom: 20px; /* 広告との間にスペースを作る */
+        }
+        /* p要素のスタイル設定 */
+        p {
+            margin: 10px 0; /* 上下マージンを設定 */
+        }
+        /* a要素のスタイル設定 */
+        a {
+            color: #3498db; /* リンクの文字色を設定 */
+            text-decoration: none; /* 下線を削除 */
+        }
+        /* a要素のホバー時のスタイル設定 */
+        a:hover {
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+        /* input[type="text"]要素のスタイル設定 */
+        input[type="text"] {
+            margin: 10px 0; /* 上下マージンを設定 */
+            padding: 10px; /* パディングを設定 */
+            border: 1px solid #34495e; /* 枠線を設定 */
+            border-radius: 5px; /* 角を丸くする */
+            width: calc(100% - 22px); /* 幅を計算して設定 */
+            box-sizing: border-box; /* ボックスサイズをborder-boxに設定 */
+        }
+        /* input[type="submit"]要素のスタイル設定 */
+        input[type="submit"] {
+            padding: 10px 20px; /* パディングを設定 */
+            background-color: #3498db; /* 背景色を設定 */
+            color: #ecf0f1; /* 文字色を設定 */
+            border: none; /* 枠線を削除 */
+            border-radius: 5px; /* 角を丸くする */
+            cursor: pointer; /* カーソルをポインタに設定 */
+            width: 100%; /* 幅を100%に設定 */
+            box-sizing: border-box; /* ボックスサイズをborder-boxに設定 */
+        }
+        /* input[type="submit"]要素のホバー時のスタイル設定 */
+        input[type="submit"]:hover {
+            background-color: #2980b9; /* ホバー時の背景色を設定 */
+        }
+        /* input[type="submit"]要素の無効時のスタイル設定 */
+        input[type="submit"]:disabled {
+            background-color: #bdc3c7; /* 無効時の背景色を設定 */
+            cursor: not-allowed; /* カーソルを禁止マークに設定 */
+        }
+        /* .ad-containerクラスのスタイル設定 */
+        .ad-container {
+            width: 100%; /* 幅を100%に設定 */
+            text-align: center; /* テキストを中央揃え */
+        }
+    </style>
+    <script>
+        // フォームの入力を検証する関数
+        function validateForm() {
+            var value1 = document.forms["nandForm"]["value1"].value; // value1の値を取得
+            var value2 = document.forms["nandForm"]["value2"].value; // value2の値を取得
+            var submitButton = document.forms["nandForm"]["submit"]; // 送信ボタンを取得
+            if (value1 === "" || value2 === "") { // どちらかが空の場合
+                submitButton.disabled = true; // 送信ボタンを無効にする
+            } else {
+                submitButton.disabled = false; // 送信ボタンを有効にする
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>論理演算を表示します</h1>
+        <!-- フォームの開始タグ。POSTメソッドでデータを送信し、アクションURLに指定されたスクリプトにデータを送る -->
+        <form name="nandForm" action="./cgi-bin/nand.py" method="POST" oninput="validateForm()">
+            値１を１か０で入力してください<br>
+            <input type="text" name="value1"><br>
+            値２を１か０で入力してください<br>
+            <input type="text" name="value2"><br>
+            <input type="submit" name="submit" value="送信" disabled>
+        </form>
+    </div>
+    <div class="ad-container">
+        <!-- 広告スペース -->
+    </div>
+</body>
+</html>
+

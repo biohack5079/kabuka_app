@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Set character encoding to UTF-8 -->
+    <meta charset="utf-8">
+    <!-- Set viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style settings for the body element */
+        body {
+            background-color: #ecf0f1; /* Set background color */
+            color: #2c3e50; /* Set text color */
+            font-family: Arial, sans-serif; /* Set font */
+            margin: 0; /* Set margin to 0 */
+            padding: 0; /* Set padding to 0 */
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Set flex direction to vertical */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 100vh; /* Set height to 100% */
+            text-align: center; /* Center text */
+            box-sizing: border-box; /* Set box-sizing to border-box */
+        }
+        /* Style settings for the h1 element */
+        h1 {
+            color: #3498db; /* Set text color for heading */
+        }
+        /* Style settings for the .container class */
+        .container {
+            background-color: #ffffff; /* Set background color for container */
+            padding: 20px; /* Set padding */
+            border-radius: 10px; /* Round corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Set box shadow */
+            width: 90%; /* Set width to 90% */
+            max-width: 400px; /* Set maximum width to 400px */
+            box-sizing: border-box; /* Set box-sizing to border-box */
+            margin-bottom: 20px; /* Create space between ads */
+        }
+        /* Style settings for the p element */
+        p {
+            margin: 10px 0; /* Set top and bottom margin */
+        }
+        /* Style settings for the a element */
+        a {
+            color: #3498db; /* Set link color */
+            text-decoration: none; /* Remove underline */
+        }
+        /* Style settings for the a element on hover */
+        a:hover {
+            text-decoration: underline; /* Show underline on hover */
+        }
+        /* Style settings for the input[type="text"] element */
+        input[type="text"] {
+            margin: 10px 0; /* Set top and bottom margin */
+            padding: 10px; /* Set padding */
+            border: 1px solid #34495e; /* Set border */
+            border-radius: 5px; /* Round corners */
+            width: calc(100% - 22px); /* Calculate and set width */
+            box-sizing: border-box; /* Set box-sizing to border-box */
+        }
+        /* Style settings for the input[type="submit"] element */
+        input[type="submit"] {
+            padding: 10px 20px; /* Set padding */
+            background-color: #3498db; /* Set background color */
+            color: #ecf0f1; /* Set text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Round corners */
+            cursor: pointer; /* Set cursor to pointer */
+            width: 100%; /* Set width to 100% */
+            box-sizing: border-box; /* Set box-sizing to border-box */
+        }
+        /* Style settings for the input[type="submit"] element on hover */
+        input[type="submit"]:hover {
+            background-color: #2980b9; /* Set background color on hover */
+        }
+        /* Style settings for the input[type="submit"] element when disabled */
+        input[type="submit"]:disabled {
+            background-color: #bdc3c7; /* Set background color when disabled */
+            cursor: not-allowed; /* Set cursor to not-allowed */
+        }
+        /* Style settings for the .ad-container class */
+        .ad-container {
+            width: 100%; /* Set width to 100% */
+            text-align: center; /* Center text */
+        }
+    </style>
+    <script>
+        // Function to validate form input
+        function validateForm() {
+            var value1 = document.forms["nandForm"]["value1"].value; // Get value of value1
+            var value2 = document.forms["nandForm"]["value2"].value; // Get value of value2
+            var submitButton = document.forms["nandForm"]["submit"]; // Get submit button
+            if (value1 === "" || value2 === "") { // If either is empty
+                submitButton.disabled = true; // Disable submit button
+            } else {
+                submitButton.disabled = false; // Enable submit button
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Display Logical Operations</h1>
+        <!-- Start of form. Sends data via POST method to the script specified in the action URL -->
+        <form name="nandForm" action="./cgi-bin/nand.py" method="POST" oninput="validateForm()">
+            Enter value 1 as 1 or 0<br>
+            <input type="text" name="value1"><br>
+            Enter value 2 as 1 or 0<br>
+            <input type="text" name="value2"><br>
+            <input type="submit" name="submit" value="Submit" disabled>
+        </form>
+    </div>
+    <div class="ad-container">
+        <!-- Ad space -->
+    </div>
+</body>
+</html>
+
